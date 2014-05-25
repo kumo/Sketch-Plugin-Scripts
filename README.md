@@ -8,6 +8,10 @@ A couple of scripts for the Sketch app.
 
 Duplicate the selected object(s) and distribute them across the artboard, randomly rotating them.
 
+### Randomly Rotate
+
+Randomly rotate the selected object(s).
+
 ## Installation
 
 1. [Download the ZIP file with the Plugins](https://github.com/kumo/Sketch-Plugin-Scripts/archive/master.zip)

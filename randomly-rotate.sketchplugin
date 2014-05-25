@@ -1,0 +1,5 @@
+for (var i=0; i<selection.count(); i++) {
+	var layer = selection[i];
+
+	[layer setRotation:Math.random() * 360];
+}
