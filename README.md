@@ -20,6 +20,12 @@ Add a bit of randomisation to a group of objects, by adjusting their position an
 
 ![Randomise Grid](https://raw.githubusercontent.com/kumo/Sketch-Plugin-Scripts/master/docs/randomise-grid.gif)
 
+### Marching
+
+Take an object and duplicate by a user-defined amount to create a marching group.
+
+![Marching](https://raw.githubusercontent.com/kumo/Sketch-Plugin-Scripts/master/docs/marching.gif)
+
 ## Installation
 
 1. [Download the ZIP file with the Plugins](https://github.com/kumo/Sketch-Plugin-Scripts/archive/master.zip)
