@@ -1,0 +1,34 @@
+var layer = selection[0];
+var layerWidth = [[layer frame] width];
+var layerHeight = [[layer frame] height];
+var frame = [layer frame];
+var parent = [layer parentGroup];
+
+var rowCount = [doc askForUserInput:"How many rows do you want?" initialValue:"5"]
+var colCount = [doc askForUserInput:"How many columns do you want?" initialValue:"3"]
+
+var widthClose = [doc askForUserInput:"How close do you want the columns?" initialValue:"50"]
+var heightClose = [doc askForUserInput:"How close do you want the rows?" initialValue:"60"]
+
+var widthOffset = layerWidth / 100 * widthClose;
+var heightOffset = layerHeight / 100 * heightClose;
+
+
+for (var row=0; row<rowCount; row++) {
+  for (var col=0; col<colCount; col++) {
+    if ((row % 2 == 1) && (col == colCount -1)) {
+      continue;
+    }
+
+    var clone = [layer duplicate];
+
+    var frame2 = [clone frame];
+    if (row % 2 == 1) {
+         [frame2 setX: col * (layerWidth) + widthOffset];
+    } else {
+      [frame2 setX: col * (layerWidth)];
+    }
+
+    [frame2 setY: -row * (layerHeight - heightOffset)];
+  }
+}
