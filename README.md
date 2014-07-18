@@ -26,6 +26,10 @@ Take an object and duplicate by a user-defined amount to create a marching group
 
 ![Marching](https://raw.githubusercontent.com/kumo/Sketch-Plugin-Scripts/master/docs/marching.gif)
 
+### Swap Objects
+
+Swap the position of two objects, taking into account their difference in height.
+
 ## Installation
 
 1. [Download the ZIP file with the Plugins](https://github.com/kumo/Sketch-Plugin-Scripts/archive/master.zip)
