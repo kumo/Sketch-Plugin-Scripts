@@ -4,15 +4,17 @@ var layerHeight = [[layer frame] height];
 var frame = [layer frame];
 var parent = [layer parentGroup];
 
+var startingX = [frame x];
+var startingY = [frame y];
+
 var rowCount = [doc askForUserInput:"How many rows do you want?" initialValue:"5"]
 var colCount = [doc askForUserInput:"How many columns do you want?" initialValue:"3"]
 
-var widthClose = [doc askForUserInput:"How close do you want the columns?" initialValue:"50"]
-var heightClose = [doc askForUserInput:"How close do you want the rows?" initialValue:"60"]
+//var widthPercentage = [doc askForUserInput:"How close do you want the columns?" initialValue:"50"]
+var heightPercentage = [doc askForUserInput:"How close do you want the rows?" initialValue:"50"]
 
-var widthOffset = layerWidth / 100 * widthClose;
-var heightOffset = layerHeight / 100 * heightClose;
-
+var widthOffset = layerWidth / 100 * 50; //widthPercentage;
+var heightOffset = layerHeight / 100 * (100 - heightPercentage);
 
 for (var row=0; row<rowCount; row++) {
   for (var col=0; col<colCount; col++) {
@@ -24,11 +26,14 @@ for (var row=0; row<rowCount; row++) {
 
     var frame2 = [clone frame];
     if (row % 2 == 1) {
-         [frame2 setX: col * (layerWidth) + widthOffset];
+         //[frame2 setX: (col * (layerWidth) + widthOffset) + startingX];
+         [frame2 setX: (col * (layerWidth) + widthOffset) + startingX];
     } else {
-      [frame2 setX: col * (layerWidth)];
+      [frame2 setX: (col * (layerWidth)) + startingX];
     }
 
-    [frame2 setY: -row * (layerHeight - heightOffset)];
+    [frame2 setY: -row * (layerHeight - heightOffset) + startingY];
   }
 }
+
+[layer setIsVisible:false];
