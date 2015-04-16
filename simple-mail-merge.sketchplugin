@@ -1,15 +1,21 @@
 var replaceValues = function(string, values) {
   var newString = string;
 
+  // ensure that the string has a tag in it
+  var matches = newString.match(/{\d+}/g)
+  if (matches == null) {
+    return string
+  }
+
   for (var i=0; i < values.length; i++) {
-    var stringToken = "["+(i+1)+"]";
+    var stringToken = "{"+(i+1)+"}";
     newString = newString.replace(stringToken, values[i]);
   }
 
   return newString;
 }
 
-var parseValues = function(string) {
+var parseUserInput = function(string) {
   var values = []
   var rows = string.split('\n')
 
@@ -23,7 +29,7 @@ var parseValues = function(string) {
 
     values.push(rowValues)
   }
-  log(values)
+  //log(values)
 
   return values
 }
@@ -44,34 +50,22 @@ var createTextRequest = function(msg) {
 }
 
 var text = createTextRequest('What is the data?')
-
-log(text)
-
-/*var doc = context.document
-var data = [doc askForUserInput:"What is the data?" initialValue:""]*/
-
-var values = parseValues(text[1])
-
-/*var xvalues = [
-  ["Cat", "miao"],
-  ["Dog", "woof"],
-  ["Quokka", "??"]
-];*/
-
-log(values)
+var rows = parseUserInput(text[1])
 
 var template = context.selection[0];
-var frame = template.frame()
+var templateFrame = template.frame()
 
-var width = frame.width()
-var height = frame.height()
+var templateWidth = templateFrame.width()
+var templateHeight = templateFrame.height()
 
-for (var rowId=0; rowId < values.length; rowId++) {
-  var rowValues = values[rowId];
+for (var rowId=0; rowId < rows.length; rowId++) {
+  var rowValues = rows[rowId];
+  
+  // position and potentially name the group
   var instance = template.duplicate();
 
   var instanceFrame = instance.frame()
-  instanceFrame.addX((width + 30) * (rowId + 1))
+  instanceFrame.addX((templateWidth + 30) * (rowId + 1))
 
   // change the artboard/layer name
   var newName = replaceValues(instance.name(), rowValues);
@@ -89,11 +83,13 @@ for (var rowId=0; rowId < values.length; rowId++) {
     var existingText = label.stringValue()
     var newText = replaceValues(existingText, rowValues);
 
-    label.setStringValue(newText)
+    if (newText != existingText) {
+      label.setStringValue(newText)
 
-    // reset name, so that the displayed string is update
-    var name = label.name()
-    label.setName(newText)
-    label.setName(name)
+      // reset name, so that the displayed string is update
+      var name = label.name()
+      label.setName(newText)
+      label.setName(name)
+    }
   }
 }

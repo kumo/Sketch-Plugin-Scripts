@@ -3,7 +3,6 @@ Sketch Plugin Scripts
 
 A couple of scripts for the Sketch app.
 
-
 ### Randomly Distribute
 
 Duplicate the selected object(s) and distribute them across the artboard, randomly rotating them.
@@ -34,7 +33,7 @@ Swap the position of two objects, taking into account their difference in height
 
 ### Simple Mail Merge
 
-Duplicate an art board or group and replace the text inside the labels with user-provided data.
+Duplicate an art board or group and replace the text inside the labels with user-provided data. This plugin expects csv data and will replace numeric tags (tagged with curly braces {}) with the csv data.
 
 ![Swap Objects](https://raw.githubusercontent.com/kumo/Sketch-Plugin-Scripts/master/docs/simple-mail-merge.gif)
 
