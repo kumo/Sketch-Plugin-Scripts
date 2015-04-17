@@ -35,6 +35,8 @@ Swap the position of two objects, taking into account their difference in height
 
 Duplicate an art board or group and replace the text inside the labels with user-provided data. This plugin expects csv data and will replace numeric tags (tagged with curly braces {}) with the csv data.
 
+Note: this plugin has been moved to its own repository: https://github.com/kumo/sketch-mail-merge
+
 ![Swap Objects](https://raw.githubusercontent.com/kumo/Sketch-Plugin-Scripts/master/docs/simple-mail-merge.gif)
 
 ## Installation
