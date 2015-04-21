@@ -37,8 +37,6 @@ Duplicate an art board or group and replace the text inside the labels with user
 
 Note: this plugin has been moved to its own repository: https://github.com/kumo/sketch-mail-merge
 
-![Swap Objects](https://raw.githubusercontent.com/kumo/Sketch-Plugin-Scripts/master/docs/simple-mail-merge.gif)
-
 ## Installation
 
 1. [Download the ZIP file with the Plugins](https://github.com/kumo/Sketch-Plugin-Scripts/archive/master.zip)
