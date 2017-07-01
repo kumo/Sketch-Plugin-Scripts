@@ -45,3 +45,7 @@ Note: this plugin has been moved to its own repository: https://github.com/kumo/
 **Plugin Folder Path**
 
 * App Store: `~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/Plugins`
+
+## Find this useful?
+
+If you find these plugins useful, consider [buying me a cake](https://paypal.me/dakegumo/5) (it goes very well with coffee!)
