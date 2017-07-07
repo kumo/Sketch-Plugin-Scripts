@@ -1,4 +1,6 @@
-var currentArtboard = selection[0].parentArtboard;
+var doc = context.document;
+var currentArtboard = context.selection[0].parentArtboard;
+var selection = context.selection;
 
 /* log(currentArtboard); */
 
